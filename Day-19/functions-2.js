@@ -1,7 +1,7 @@
 //let's play with parameters more
 
 //step:3
-// while assume multiple prices can be passed:  Then we will use spread/rest operator (...) triple dots
+// while assuming multiple prices can be passed:  Then we will use spread/rest operator (...) triple dots
 // Now we can pass lots of value
 function calculateCartPrice(...num1) {
     return num1
