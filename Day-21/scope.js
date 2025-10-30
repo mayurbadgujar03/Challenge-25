@@ -45,7 +45,7 @@ function addOne (num) {
 addOne(5)
 
 
-// this is the concept of hoisting
+// this is the concept of hoisting: Scope level and mini hoisting in javascript
 
 //BUt with function EXPRESSION, we can't access before the declaration, because we stored(holded) it into a variable
 addTwo(5)
