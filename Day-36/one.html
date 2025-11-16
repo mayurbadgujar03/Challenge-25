@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Max Here !</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //Completes a work in time - 2000
+    // setTimeout(function(){
+    //     console.log("Mayur");
+    // }, 2000)
+
+    const sayMayur = function(){
+        console.log("Mayur");
+    }
+
+    // With DOM
+    const changeText = function () {
+        document.querySelector('h1').innerHTML = 'JS prep is going on';
+    }
+    const changeMe = setTimeout(changeText, 2000);
+
+    // Just give the refrence
+    setTimeout(sayMayur, 2000);
+
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearTimeout(changeMe)
+        console.log("STOPPED");
+    });
+</script>
+</html>

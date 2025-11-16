@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Max Here - with JS !</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <h2>UL list</h2>
+    <ul id="list"></ul>
+  </body>
+  <script>
+    //Example
+    // setInterval(function(){
+    //     // console.log("MAX", Date.now());
+    // }, 1000)
+
+    const sayDate = function () {
+      // console.log("MAX", Date.now());
+    };
+    setInterval(sayDate, 1000);
+
+    const sayDateWithParameter = function (str) {
+      // console.log(str, Date.now());
+    };
+    const intervalId = setInterval(sayDateWithParameter, 1000, "hi");
+    clearInterval(intervalId);
+
+    // PROJECT based : -
+
+    let status = false;
+    let timeFun = null;
+    console.log(status, );
+
+    const addListWithTime = function () {
+      const listRef = document.querySelector("#list");
+
+      const newLi = document.createElement("li");
+
+      let date = new Date();
+      const currTime = date.toLocaleTimeString();
+      const newContent = document.createTextNode(`Hi max here - ${currTime}`);
+
+      newLi.appendChild(newContent);
+      listRef.appendChild(newLi);
+    };
+
+    const action = function () {
+      if (status) {
+        if(!timeFun){
+            timeFun = setInterval(addListWithTime, 1000);
+        }
+      } else {
+        clearInterval(timeFun);
+        timeFun = null;
+      }
+    };
+
+    const startBtn = document.querySelector("#start");
+    startBtn.addEventListener("click", () => {
+      status = true;
+      console.log(status);
+      action();
+    });
+
+    const stopBtn = document.querySelector("#stop");
+    stopBtn.addEventListener("click", () => {
+      status = false;
+      console.log(status);
+      action();
+    });
+  </script>
+</html>
